@@ -36,7 +36,7 @@ import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handleba
         username: config.get<string>(DB_USERNAME2),
         password: config.get<string>(DB_PASSWORD2),
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
-        synchronize: false,
+        synchronize: true,
       }),
     }),
     MailerModule.forRootAsync({
