@@ -11,9 +11,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(new ValidationPipe());
   const config = new ConfigService();
-  app.enableCors({
-    origin: config.get<string>(APP_BASE_URL),
-  });
+  app.enableCors();
   app.use(helmet());
   const cfgSwagger = new DocumentBuilder()
     .addBearerAuth()
