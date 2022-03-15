@@ -13,6 +13,6 @@ export class ImageService {
         const formData = new FormData();
         formData.append('file', file);
         formData.append('upload_preset', 'lvpkg390');
-        return await axios.post(process.env.REACT_APP_API_IMAGE || '', formData, { cancelToken });
+        return await axios.post('https://api.cloudinary.com/v1_1/lcnlvrz/image/upload', formData, { cancelToken });
     }
 }
